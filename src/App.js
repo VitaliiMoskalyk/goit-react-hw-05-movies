@@ -14,7 +14,7 @@ const Nothing = lazy(() => import('./components/views/notFound/NothingHere'));
 const FilmCard = lazy(() => import('./components/views/film_card'));
 const Layout = lazy(() => import('./components/layout/Layout'));
 const Cast = lazy(() => import('./components/views/cast'));
-const Reviews = lazy(() => import('./components/views/home'));
+const Reviews = lazy(() => import('./components/views/reviews'));
 
 const APIkey = "497db919393f11a553a342853c0aad01";
 const APIadress = `https://api.themoviedb.org/3/trending/all/day?api_key=${APIkey}`;
