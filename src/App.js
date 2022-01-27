@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 // import TrendMovies from './components/views/home';
 // import MoviesPage from './components/views/movies';
@@ -22,7 +22,7 @@ const APIadress = `https://api.themoviedb.org/3/trending/all/day?api_key=${APIke
 function App() {
 
   return <>
-    {/* <Suspense fallback={<h3>Loading...</h3>}> */}
+    <Suspense fallback={<h3>Loading...</h3>}>
     <Routes>
       <Route path="/" element={<Layout/>}>
         <Route index element={<TrendMovies url={APIadress} />} />
@@ -34,7 +34,7 @@ function App() {
         <Route path="*" element={<Nothing />} />
       </Route>
       </Routes>
-      {/* </Suspense> */}
+      </Suspense>
   </>
 }
 
