@@ -58,7 +58,7 @@ export default function MoviesPage() {
 
       {movies &&
         movies.results.map(({ title, id, poster_path }) => (
-          <NavLink key={id} to={`/movies/${id}`}>
+          <NavLink key={id} to={`${id}`}>
             <img
               src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
               alt=""

@@ -28,7 +28,8 @@ function App() {
         <Route index element={<TrendMovies url={APIadress} />} />
         <Route path="movies/:filmId/*" element={<FilmCard />}>
             <Route path="cast" element={<Cast/>}/>
-            <Route path="reviews" element={<Reviews/>} />
+            <Route path="reviews" element={<Reviews />} />
+            
         </Route>
         <Route path="movies" element={<MoviesPage />}/>
         <Route path="*" element={<Nothing />} />
