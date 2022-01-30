@@ -21,7 +21,7 @@ export default function Cast() {
           <button type="button" onClick={() => navigate(-1)}>
             Go back
           </button>
-          {!error ? (
+          {error ? (
             <img src={NoInfo} alt="no info" />
           ) : (
             filmInfo.cast.map(({ profile_path, name, id }) => (

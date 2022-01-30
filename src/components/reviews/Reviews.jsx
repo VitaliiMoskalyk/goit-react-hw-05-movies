@@ -20,7 +20,7 @@ export default function Reviews() {
           <button type="button" onClick={() => navigate(-1)}>
             Go back
           </button>
-          {!error ? (
+          {error ? (
             <img src={NoInfo} alt="no info" />
           ) : (
             filmInfo.results.map(({ author, content, id }) => (
