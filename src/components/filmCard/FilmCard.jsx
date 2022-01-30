@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Overviev } from "../../views/filmOverview/filmCard.styled";
 import { Wrapper, FilmInfo, FilmItems } from "./filmCard.styled";
+import DefaultImage from "../images/No-Image.png";
 
 export default function FilmCard({
   title,
@@ -14,7 +15,7 @@ export default function FilmCard({
     <Wrapper>
       <h3>{title}</h3>
       <img
-        src={`https://image.tmdb.org/t/p/w500/${src}`}
+        src={src ? `https://image.tmdb.org/t/p/w500/${src}` : DefaultImage}
         alt={title}
         width={500}
       />
