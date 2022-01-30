@@ -1,9 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { Head, Title, Footer } from "./layout.styled";
+import { Head, Title, NavMenu } from "./layout.styled";
+import { Button } from "../button/Button.styled";
 
 export default function Layout() {
   let activeStyle = {
-    color: "red",
+    color: "black",
   };
 
   return (
@@ -13,24 +14,24 @@ export default function Layout() {
           <h1>Find your best film!</h1>
         </Title>
         <nav>
-          <ul>
-            <li>
+          <NavMenu>
+            <Button style={{ marginRight: "10px" }}>
               <NavLink
                 to="/"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
               >
                 Home
               </NavLink>
-            </li>
-            <li>
+            </Button>
+            <Button>
               <NavLink
                 to="/movies"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
               >
                 Movies
               </NavLink>
-            </li>
-          </ul>
+            </Button>
+          </NavMenu>
         </nav>
         <hr />
       </Head>
