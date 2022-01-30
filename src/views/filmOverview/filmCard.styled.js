@@ -15,5 +15,5 @@ background-color:grey;
 `
 
 export const Overviev = styled.p`
-max-width:680px;
+max-width:500px;
 `

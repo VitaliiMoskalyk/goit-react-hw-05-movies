@@ -15,5 +15,5 @@ export const Footer = styled.main`
 position: fixed;
 bottom:0;
 width:100%;
-background-color:whitesmoke;
+/* background-color:whitesmoke; */
 `

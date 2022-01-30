@@ -35,9 +35,9 @@ export default function Layout() {
         <hr />
       </Head>
       <Outlet />
-      <Footer>
+      {/* <Footer>
         <h3>We hope that you found the best film!</h3>
-      </Footer>
+      </Footer> */}
     </>
   );
 }
