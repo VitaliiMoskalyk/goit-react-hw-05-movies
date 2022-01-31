@@ -28,6 +28,7 @@ function useFetchData(type, movie, query) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (query === "") return;
     setIsLoaded(true);
     fetch(`https://api.themoviedb.org/3/${APIurl}`)
       .then((res) => res.json())
@@ -41,7 +42,7 @@ function useFetchData(type, movie, query) {
           setIsLoaded(false);
         }
       );
-  }, [APIurl]);
+  }, [APIurl, query]);
 
   return [data, isLoaded, error];
 }

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import api from "../../fetchAPI";
-import { Wrapper } from "./filmCard.styled";
+import { Wrapper } from "./filmOverview.styled";
 import FilmCard from "../../components/filmCard";
 import Button from "../../components/button";
 

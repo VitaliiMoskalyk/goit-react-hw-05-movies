@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { Overviev } from "../../views/filmOverview/filmCard.styled";
+import { Overviev } from "../../views/filmOverview/filmOverview.styled";
 import { Wrapper, FilmInfo, FilmItems } from "./filmCard.styled";
 import DefaultImage from "../images/No-Image.png";
 

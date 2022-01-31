@@ -1,15 +1,17 @@
-import DefaultImage from "../images/No-Image.png";
-import { Wrapper } from "./filmList.styled";
+import { NavLink } from "react-router-dom";
+import FilmItem from "../filmItem";
+import propTypes from "prop-types";
+import { object } from "prop-types";
 
-export default function FilmList({ src, title }) {
-  return (
-    <Wrapper>
-      <img
-        src={src ? `https://image.tmdb.org/t/p/w500/${src}` : DefaultImage}
-        alt={title ? title : "no-description"}
-        width={210}
-      />
-      <p>{title ? title : "No title"}</p>
-    </Wrapper>
-  );
+export default function FilmList({ movies }) {
+  return movies.map(({ title, id, poster_path }) => {
+    return (
+      <NavLink to={`/movies/${id}`} key={id}>
+        <FilmItem title={title} src={poster_path} />
+      </NavLink>
+    );
+  });
 }
+FilmList.propTypes = {
+  movies: propTypes.arrayOf(object).isRequired,
+};

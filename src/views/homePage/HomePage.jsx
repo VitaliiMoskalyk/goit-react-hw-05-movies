@@ -1,7 +1,6 @@
 import api from "../../fetchAPI";
-import { Wrapper } from "./trendMovies.styled";
+import { Wrapper } from "./homePage.styled";
 import FilmList from "../../components/filmList/FilmList";
-import { NavLink } from "react-router-dom";
 
 export default function HomePage() {
   const [trendMovies, isLoaded, error] = api.useFetchData("trending");
@@ -13,12 +12,7 @@ export default function HomePage() {
 
       {isLoaded && <p>Loading...</p>}
 
-      {trendMovies &&
-        trendMovies.results.map(({ id, title, poster_path }) => (
-          <NavLink to={`/movies/${id}`} key={id}>
-            <FilmList title={title} src={poster_path} />
-          </NavLink>
-        ))}
+      {trendMovies && <FilmList movies={trendMovies.results} />}
     </Wrapper>
   );
 }
