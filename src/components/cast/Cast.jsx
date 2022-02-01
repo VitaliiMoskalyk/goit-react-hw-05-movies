@@ -18,7 +18,7 @@ export default function Cast() {
 
       {filmInfo && (
         <List>
-          {error ? (
+          {filmInfo.cast.length === 0 ? (
             <img src={NoInfo} alt="no info" />
           ) : (
             filmInfo.cast.map(({ profile_path, name, id }) => (

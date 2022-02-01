@@ -17,7 +17,7 @@ export default function Reviews() {
 
       {filmInfo && (
         <Wrapper>
-          {error ? (
+          {filmInfo.total_results === 0 ? (
             <img src={NoInfo} alt="no info" />
           ) : (
             filmInfo.results.map(({ author, content, id }) => (

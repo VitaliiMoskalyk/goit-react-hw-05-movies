@@ -13,7 +13,7 @@ export default function FilmCard({
 }) {
   const location = useLocation();
   const fromPage = location.state;
-  console.log(fromPage);
+
   return (
     <Wrapper>
       <h3>{title}</h3>
