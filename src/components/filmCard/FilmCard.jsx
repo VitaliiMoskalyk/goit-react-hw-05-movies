@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { Overviev } from "../../views/filmOverview/filmOverview.styled";
 import { Wrapper, FilmInfo, FilmItems } from "./filmCard.styled";
 import DefaultImage from "../images/No-Image.png";
@@ -11,6 +11,9 @@ export default function FilmCard({
   popularity,
   vote,
 }) {
+  const location = useLocation();
+  const fromPage = location.state;
+  console.log(fromPage);
   return (
     <Wrapper>
       <h3>{title}</h3>
@@ -30,8 +33,12 @@ export default function FilmCard({
         <FilmItems>{vote}</FilmItems>
       </FilmInfo>
       <Overviev>{overview}</Overviev>
-      <NavLink to="cast">Cast</NavLink>
-      <NavLink to="reviews">Rewiews</NavLink>
+      <NavLink to="cast" state={fromPage}>
+        Cast
+      </NavLink>
+      <NavLink to="reviews" state={fromPage}>
+        Rewiews
+      </NavLink>
       <Outlet />
     </Wrapper>
   );

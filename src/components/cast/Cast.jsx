@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import api from "../../fetchAPI";
 import { List } from "./cast.styled.js";
 import FilmItem from "../filmItem";
@@ -7,7 +7,7 @@ import NoInfo from "../images/NoInfo.png";
 export default function Cast() {
   const params = useParams();
   const movie = params.filmId;
-  const navigate = useNavigate();
+
   const [filmInfo, isLoaded, error] = api.useFetchData("casting", movie);
 
   return (
@@ -18,9 +18,6 @@ export default function Cast() {
 
       {filmInfo && (
         <List>
-          <button type="button" onClick={() => navigate(-1)}>
-            Go back
-          </button>
           {error ? (
             <img src={NoInfo} alt="no info" />
           ) : (

@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import api from "../../fetchAPI";
 import { Wrapper } from "./rewievs.styled";
 import NoInfo from "../images/NoInfo.png";
@@ -6,7 +6,7 @@ import NoInfo from "../images/NoInfo.png";
 export default function Reviews() {
   const params = useParams();
   const movie = params.filmId;
-  const navigate = useNavigate();
+
   const [filmInfo, isLoaded, error] = api.useFetchData("review", movie);
 
   return (
@@ -17,9 +17,6 @@ export default function Reviews() {
 
       {filmInfo && (
         <Wrapper>
-          <button type="button" onClick={() => navigate(-1)}>
-            Go back
-          </button>
           {error ? (
             <img src={NoInfo} alt="no info" />
           ) : (
